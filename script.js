@@ -9,6 +9,7 @@ const i18n = {
     pageDescription:
       'Assessoria de investimentos para profissionais que buscam clareza financeira, planejamento de longo prazo e suporte personalizado. Agende seu diagnóstico financeiro.',
     'nav.cta': 'Agendar Diagnóstico Financeiro',
+    'nav.blog': 'Blog',
     'hero.eyebrow': 'Assessoria Profissional de Investimentos',
     'hero.title': 'Organize suas decisões financeiras com estratégia',
     'hero.subtitle':
@@ -69,6 +70,16 @@ const i18n = {
       'Ex: organizar investimentos e iniciar planejamento de aposentadoria',
     'form.submit': 'Agendar Diagnóstico Financeiro',
     'form.emailDelivery': 'Ao enviar, sua proposta é encaminhada diretamente para o e-mail do assessor.',
+    'blog.title': 'Blog de Educação Financeira',
+    'blog.intro':
+      'Conteúdo prático para melhorar a organização financeira, investir com visão de longo prazo e tomar decisões mais conscientes.',
+    'blog.card1Title': 'Reserva de emergência',
+    'blog.card1Text': 'Como construir proteção financeira antes de buscar mais rentabilidade.',
+    'blog.card2Title': 'Carteira para iniciantes',
+    'blog.card2Text': 'Passos para estruturar uma carteira com diversificação e consistência.',
+    'blog.card3Title': 'Planejamento de aposentadoria',
+    'blog.card3Text': 'Estratégias de longo prazo para preservar poder de compra e patrimônio.',
+    'blog.cardRead': 'Ler artigo',
     'trust.title': 'Confiança e Transparência',
     'trust.card1Title': 'Conduta Profissional',
     'trust.card1Text': 'Atendimento pautado em ética, clareza e respeito aos seus objetivos.',
@@ -106,6 +117,7 @@ const i18n = {
     pageDescription:
       'Strategic investment advisory for professionals seeking financial clarity, long-term planning, and personalized support. Schedule your financial diagnosis meeting.',
     'nav.cta': 'Schedule Financial Diagnosis',
+    'nav.blog': 'Blog',
     'hero.eyebrow': 'Professional Investment Advisory',
     'hero.title': 'Organize your financial decisions with strategy',
     'hero.subtitle':
@@ -165,6 +177,16 @@ const i18n = {
       'Example: organize investments and start retirement planning',
     'form.submit': 'Schedule Financial Diagnosis',
     'form.emailDelivery': 'When submitted, your proposal is sent directly to the advisor email.',
+    'blog.title': 'Financial Education Blog',
+    'blog.intro':
+      'Practical content to improve financial organization, invest with a long-term vision, and make better decisions.',
+    'blog.card1Title': 'Emergency fund',
+    'blog.card1Text': 'How to build financial protection before seeking higher returns.',
+    'blog.card2Title': 'Portfolio for beginners',
+    'blog.card2Text': 'Steps to structure a portfolio with diversification and consistency.',
+    'blog.card3Title': 'Retirement planning',
+    'blog.card3Text': 'Long-term strategies to preserve purchasing power and wealth.',
+    'blog.cardRead': 'Read article',
     'trust.title': 'Trust & Transparency',
     'trust.card1Title': 'Professional Conduct',
     'trust.card1Text':
@@ -280,9 +302,55 @@ function fallbackToMailClient(formData) {
   window.location.href = mailto;
 }
 
+
+function initializeAnalytics() {
+  window.dataLayer = window.dataLayer || [];
+  window.gtag =
+    window.gtag ||
+    function () {
+      window.dataLayer.push(arguments);
+    };
+
+  window.gtag('js', new Date());
+  window.gtag('config', 'GA_MEASUREMENT_ID');
+
+  window.hj =
+    window.hj ||
+    function () {
+      (window.hj.q = window.hj.q || []).push(arguments);
+    };
+  window._hjSettings = { hjid: 'HOTJAR_ID', hjsv: 6 };
+
+  const hotjarScript = document.createElement('script');
+  hotjarScript.async = true;
+  hotjarScript.src =
+    'https://static.hotjar.com/c/hotjar-' +
+    window._hjSettings.hjid +
+    '.js?sv=' +
+    window._hjSettings.hjsv;
+  document.head.appendChild(hotjarScript);
+
+  window.clarity =
+    window.clarity ||
+    function () {
+      (window.clarity.q = window.clarity.q || []).push(arguments);
+    };
+
+  const clarityScript = document.createElement('script');
+  clarityScript.async = true;
+  clarityScript.src = 'https://www.clarity.ms/tag/CLARITY_PROJECT_ID';
+  document.head.appendChild(clarityScript);
+}
+
 year.textContent = new Date().getFullYear();
 applyLanguage('pt');
 setupAnimations();
+
+if ('requestIdleCallback' in window) {
+  window.requestIdleCallback(initializeAnalytics, { timeout: 2000 });
+} else {
+  window.addEventListener('load', initializeAnalytics, { once: true });
+}
 
 langButtons.forEach((button) => {
   button.addEventListener('click', () => applyLanguage(button.dataset.lang));
