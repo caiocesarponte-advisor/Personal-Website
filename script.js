@@ -8,13 +8,13 @@ const i18n = {
     pageTitle: 'Caio César Ponte | Assessoria Estratégica de Investimentos',
     pageDescription:
       'Assessoria de investimentos para profissionais que buscam clareza financeira, planejamento de longo prazo e suporte personalizado. Agende seu diagnóstico financeiro.',
-    'nav.cta': 'Agendar Diagnóstico Financeiro',
+    'nav.cta': 'Agendar Diagnóstico',
     'nav.blog': 'Blog',
     'hero.eyebrow': 'Assessoria Profissional de Investimentos',
     'hero.title': 'Organize suas decisões financeiras com estratégia',
     'hero.subtitle':
       'Assessoria de investimentos com foco em clareza financeira, planejamento de longo prazo e suporte personalizado.',
-    'hero.primaryCta': 'Agendar Diagnóstico Financeiro',
+    'hero.primaryCta': 'Agendar Diagnóstico',
     'hero.secondaryCta': 'Conheça seu Assessor',
     'about.title': 'Sobre o Assessor',
     'about.description':
@@ -48,7 +48,7 @@ const i18n = {
     'method.step4Text': 'Acompanhamento contínuo e ajustes conforme sua vida e metas evoluem.',
     'audience.title': 'Para Quem é Esta Assessoria',
     'audience.intro':
-      'Profissionais com renda entre <strong>$1.500 e $5.000 mensais</strong> que buscam decisões de investimento estruturadas, planejamento de aposentadoria e construção de patrimônio sustentável.',
+      'Profissionais com renda entre <strong>R$ 1.500 e R$ 5.000 mensais</strong>, com abertura para perfis acima dessa faixa que buscam decisões de investimento estruturadas, planejamento de aposentadoria e construção de patrimônio sustentável.',
     'audience.item1': 'Profissionais em fase de crescimento na carreira',
     'audience.item2': 'Famílias com planejamento de médio e longo prazo',
     'audience.item3':
@@ -62,13 +62,14 @@ const i18n = {
     'form.emailLabel': 'Email',
     'form.incomeLabel': 'Faixa de renda mensal',
     'form.incomePlaceholder': 'Selecione uma opção',
-    'form.income1': '$1.500 - $2.500',
-    'form.income2': '$2.500 - $3.500',
-    'form.income3': '$3.500 - $5.000',
+    'form.income1': 'R$ 1.500 - R$ 2.500',
+    'form.income2': 'R$ 2.500 - R$ 3.500',
+    'form.income3': 'R$ 3.500 - R$ 5.000',
+    'form.income4': 'R$ 5.000+',
     'form.goalLabel': 'Objetivo principal',
     'form.goalPlaceholder':
       'Ex: organizar investimentos e iniciar planejamento de aposentadoria',
-    'form.submit': 'Agendar Diagnóstico Financeiro',
+    'form.submit': 'Agendar Diagnóstico',
     'form.emailDelivery': 'Ao enviar, sua proposta é encaminhada diretamente para o e-mail do assessor.',
     'blog.title': 'Blog de Educação Financeira',
     'blog.intro':
@@ -116,13 +117,13 @@ const i18n = {
     pageTitle: 'Caio César Ponte | Strategic Investment Advisory',
     pageDescription:
       'Strategic investment advisory for professionals seeking financial clarity, long-term planning, and personalized support. Schedule your financial diagnosis meeting.',
-    'nav.cta': 'Schedule Financial Diagnosis',
+    'nav.cta': 'Schedule Diagnosis',
     'nav.blog': 'Blog',
     'hero.eyebrow': 'Professional Investment Advisory',
     'hero.title': 'Organize your financial decisions with strategy',
     'hero.subtitle':
       'Investment advisory focused on financial clarity, long-term planning, and personalized support.',
-    'hero.primaryCta': 'Schedule Financial Diagnosis',
+    'hero.primaryCta': 'Schedule Diagnosis',
     'hero.secondaryCta': 'Meet Your Advisor',
     'about.title': 'About the Advisor',
     'about.description':
@@ -156,7 +157,7 @@ const i18n = {
     'method.step4Text': 'Review progress and adjust strategy as your life and goals evolve.',
     'audience.title': 'Who This Is For',
     'audience.intro':
-      'Professionals earning between <strong>$1,500 and $5,000 monthly</strong> who want structured investment decisions, retirement planning, and sustainable wealth growth.',
+      'Professionals earning between <strong>$270 and $910 monthly</strong> (based on an exchange reference of R$5.50/USD), with openness to higher-income profiles seeking structured investment decisions, retirement planning, and sustainable wealth growth.',
     'audience.item1': 'Career professionals in growth phase',
     'audience.item2': 'Families planning medium and long-term financial stability',
     'audience.item3': 'Investors seeking professional guidance with transparency',
@@ -169,13 +170,14 @@ const i18n = {
     'form.emailLabel': 'Email',
     'form.incomeLabel': 'Monthly income range',
     'form.incomePlaceholder': 'Select one option',
-    'form.income1': '$1,500 - $2,500',
-    'form.income2': '$2,500 - $3,500',
-    'form.income3': '$3,500 - $5,000',
+    'form.income1': '$270 - $455',
+    'form.income2': '$455 - $640',
+    'form.income3': '$640 - $910',
+    'form.income4': '$910+',
     'form.goalLabel': 'Main objective',
     'form.goalPlaceholder':
       'Example: organize investments and start retirement planning',
-    'form.submit': 'Schedule Financial Diagnosis',
+    'form.submit': 'Schedule Diagnosis',
     'form.emailDelivery': 'When submitted, your proposal is sent directly to the advisor email.',
     'blog.title': 'Financial Education Blog',
     'blog.intro':

@@ -87,10 +87,17 @@ a {
 }
 
 .nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.42rem 0.9rem;
+  border: 1px solid rgba(200, 167, 93, 0.35);
+  border-radius: 999px;
   text-decoration: none;
   color: var(--accent);
   font-weight: 600;
   font-size: 0.95rem;
+  white-space: nowrap;
 }
 
 .nav-blog {
@@ -362,17 +369,39 @@ summary {
 
 @media (max-width: 640px) {
   .nav {
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.7rem;
+    padding: 0.75rem 0;
+  }
+
+  .brand {
+    text-align: center;
   }
 
   .header-actions {
     width: 100%;
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: center;
     gap: 0.6rem;
   }
 
+  .nav-blog {
+    order: 2;
+  }
+
+  .lang-switch {
+    order: 1;
+  }
+
+  .nav-cta {
+    order: 3;
+    width: 100%;
+    padding: 0.65rem 0.9rem;
+  }
+
   .hero {
-    padding-top: 4.3rem;
+    padding-top: 4.9rem;
   }
 
   .section {
