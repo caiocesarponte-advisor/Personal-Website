@@ -68,6 +68,7 @@ const i18n = {
     'form.goalPlaceholder':
       'Ex: organizar investimentos e iniciar planejamento de aposentadoria',
     'form.submit': 'Agendar Diagnóstico Financeiro',
+    'form.emailDelivery': 'Ao enviar, sua proposta é encaminhada diretamente para o e-mail do assessor.',
     'trust.title': 'Confiança e Transparência',
     'trust.card1Title': 'Conduta Profissional',
     'trust.card1Text': 'Atendimento pautado em ética, clareza e respeito aos seus objetivos.',
@@ -97,6 +98,8 @@ const i18n = {
     validationMessage: 'Por favor, preencha todos os campos obrigatórios antes de enviar.',
     successMessage:
       'Obrigado, {name}. Seu pedido foi recebido. Entraremos em contato para agendar seu diagnóstico financeiro.',
+    sendingMessage: 'Enviando proposta...',
+    sendErrorMessage: 'Não foi possível enviar automaticamente agora. Seu aplicativo de e-mail será aberto para concluir o envio.',
   },
   en: {
     pageTitle: 'Caio César Ponte | Strategic Investment Advisory',
@@ -161,6 +164,7 @@ const i18n = {
     'form.goalPlaceholder':
       'Example: organize investments and start retirement planning',
     'form.submit': 'Schedule Financial Diagnosis',
+    'form.emailDelivery': 'When submitted, your proposal is sent directly to the advisor email.',
     'trust.title': 'Trust & Transparency',
     'trust.card1Title': 'Professional Conduct',
     'trust.card1Text':
@@ -192,6 +196,8 @@ const i18n = {
     validationMessage: 'Please complete all required fields before submitting.',
     successMessage:
       'Thank you, {name}. Your request was received. We will contact you soon to schedule your financial diagnosis.',
+    sendingMessage: 'Sending your proposal...',
+    sendErrorMessage: 'Automatic sending is unavailable right now. Your email app will open so you can finish sending it.',
   },
 };
 
@@ -232,14 +238,57 @@ function applyLanguage(lang) {
   status.textContent = '';
 }
 
+function setupAnimations() {
+  const animatedElements = document.querySelectorAll('[data-animate]');
+  if (!animatedElements.length) {
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  animatedElements.forEach((element) => observer.observe(element));
+}
+
+function fallbackToMailClient(formData) {
+  const recipient = form.dataset.emailRecipient;
+  if (!recipient) {
+    return;
+  }
+
+  const dict = i18n[currentLang];
+  const subject = currentLang === 'pt' ? 'Nova proposta recebida pelo site' : 'New proposal received from website';
+  const body = [
+    `Nome: ${formData.get('name')}`,
+    `Email: ${formData.get('email')}`,
+    `Faixa de renda: ${formData.get('income')}`,
+    '',
+    `Objetivo: ${formData.get('goal')}`,
+  ].join('\n');
+
+  const mailto = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  status.textContent = dict.sendErrorMessage;
+  window.location.href = mailto;
+}
+
 year.textContent = new Date().getFullYear();
 applyLanguage('pt');
+setupAnimations();
 
 langButtons.forEach((button) => {
   button.addEventListener('click', () => applyLanguage(button.dataset.lang));
 });
 
-form.addEventListener('submit', (event) => {
+form.addEventListener('submit', async (event) => {
   event.preventDefault();
 
   const dict = i18n[currentLang];
@@ -250,7 +299,13 @@ form.addEventListener('submit', (event) => {
   }
 
   const formData = new FormData(form);
+
+  if (formData.get('_honey')) {
+    return;
+  }
+
   const name = formData.get('name');
+  status.textContent = dict.sendingMessage;
 
   if (window.gtag) {
     window.gtag('event', 'lead_form_submit', {
@@ -269,6 +324,22 @@ form.addEventListener('submit', (event) => {
     window.clarity('set', 'lang_selected', currentLang);
   }
 
-  status.textContent = dict.successMessage.replace('{name}', name);
-  form.reset();
+  try {
+    const response = await fetch('https://formspree.io/f/xeokzqnk', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+      },
+      body: formData,
+    });
+
+    if (!response.ok) {
+      throw new Error('Submit failed');
+    }
+
+    status.textContent = dict.successMessage.replace('{name}', name);
+    form.reset();
+  } catch (error) {
+    fallbackToMailClient(formData);
+  }
 });
