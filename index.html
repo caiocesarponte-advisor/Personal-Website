@@ -1,18 +1,18 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Caio César Ponte | Strategic Investment Advisory</title>
+    <title>Caio César Ponte | Assessoria Estratégica de Investimentos</title>
     <meta
       name="description"
-      content="Strategic investment advisory for professionals seeking financial clarity, long-term planning, and personalized support. Schedule your financial diagnosis meeting."
+      content="Assessoria de investimentos para profissionais que buscam clareza financeira, planejamento de longo prazo e suporte personalizado. Agende seu diagnóstico financeiro."
     />
     <meta name="theme-color" content="#0B3C5D" />
-    <meta property="og:title" content="Caio César Ponte | Strategic Investment Advisory" />
+    <meta property="og:title" content="Caio César Ponte | Assessoria Estratégica de Investimentos" />
     <meta
       property="og:description"
-      content="Organize your financial decisions with strategy through personalized investment advisory."
+      content="Organize suas decisões financeiras com estratégia por meio de uma assessoria personalizada."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://example.com" />
@@ -68,22 +68,27 @@
     <header class="site-header" aria-label="Top navigation">
       <div class="container nav">
         <a class="brand" href="#home">Caio César Ponte</a>
-        <a class="nav-cta" href="#diagnosis">Schedule Financial Diagnosis</a>
+        <div class="header-actions">
+          <div class="lang-switch" role="group" aria-label="Language switcher">
+            <button class="lang-btn active" data-lang="pt" aria-pressed="true" type="button">🇧🇷 PT</button>
+            <button class="lang-btn" data-lang="en" aria-pressed="false" type="button">🇺🇸 US</button>
+          </div>
+          <a class="nav-cta" href="#diagnosis" data-i18n="nav.cta">Agendar Diagnóstico Financeiro</a>
+        </div>
       </div>
     </header>
 
     <main id="home">
       <section class="hero section">
         <div class="container">
-          <p class="eyebrow">Professional Investment Advisory</p>
-          <h1>Organize your financial decisions with strategy</h1>
-          <p class="hero-copy">
-            Investment advisory focused on financial clarity, long-term planning, and
-            personalized support.
+          <p class="eyebrow" data-i18n="hero.eyebrow">Assessoria Profissional de Investimentos</p>
+          <h1 data-i18n="hero.title">Organize suas decisões financeiras com estratégia</h1>
+          <p class="hero-copy" data-i18n="hero.subtitle">
+            Assessoria de investimentos com foco em clareza financeira, planejamento de longo prazo e suporte personalizado.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#diagnosis">Schedule Financial Diagnosis</a>
-            <a class="btn btn-secondary" href="#about">Meet Your Advisor</a>
+            <a class="btn btn-primary" href="#diagnosis" data-i18n="hero.primaryCta">Agendar Diagnóstico Financeiro</a>
+            <a class="btn btn-secondary" href="#about" data-i18n="hero.secondaryCta">Conheça seu Assessor</a>
           </div>
         </div>
       </section>
@@ -91,43 +96,40 @@
       <section id="about" class="section">
         <div class="container split">
           <div>
-            <h2>About the Advisor</h2>
-            <p>
-              Caio César Ponte provides personalized investment advisory with a disciplined,
-              long-term perspective. His approach combines clear communication, strategic
-              portfolio organization, and practical planning to help professionals make
-              confident financial decisions.
+            <h2 data-i18n="about.title">Sobre o Assessor</h2>
+            <p data-i18n="about.description">
+              Caio César Ponte oferece assessoria personalizada com visão disciplinada e foco no longo prazo. Sua abordagem combina comunicação clara, organização estratégica de carteira e planejamento prático para apoiar decisões financeiras com confiança.
             </p>
             <ul class="checklist">
-              <li>Strategic investment organization</li>
-              <li>Long-term wealth and retirement planning</li>
-              <li>Guidance tailored to your financial reality and goals</li>
+              <li data-i18n="about.item1">Organização estratégica dos investimentos</li>
+              <li data-i18n="about.item2">Planejamento de patrimônio e aposentadoria</li>
+              <li data-i18n="about.item3">Orientação aderente à sua realidade e objetivos</li>
             </ul>
           </div>
           <aside class="card" aria-label="Advisor contact details">
-            <h3>Contact</h3>
-            <p><strong>Name:</strong> Caio César Ponte</p>
-            <p><strong>Email:</strong> <a href="mailto:caiocesar.investing@gmail.com">caiocesar.investing@gmail.com</a></p>
-            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/caiocesarponteadvisor/" target="_blank" rel="noopener noreferrer">Profile</a></p>
+            <h3 data-i18n="contact.title">Contato</h3>
+            <p><strong data-i18n="contact.nameLabel">Nome:</strong> Caio César Ponte</p>
+            <p><strong data-i18n="contact.emailLabel">Email:</strong> <a href="mailto:caiocesar.investing@gmail.com">caiocesar.investing@gmail.com</a></p>
+            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/caiocesarponteadvisor/" target="_blank" rel="noopener noreferrer" data-i18n="contact.linkedinLink">Perfil</a></p>
           </aside>
         </div>
       </section>
 
       <section class="section muted">
         <div class="container">
-          <h2>Common Investor Challenges</h2>
+          <h2 data-i18n="problems.title">Desafios Comuns do Investidor</h2>
           <div class="grid-3">
             <article class="card">
-              <h3>Lack of Financial Structure</h3>
-              <p>Income grows, but investment decisions remain fragmented and inconsistent.</p>
+              <h3 data-i18n="problems.card1Title">Falta de Estrutura Financeira</h3>
+              <p data-i18n="problems.card1Text">A renda cresce, mas as decisões de investimento continuam fragmentadas e sem consistência.</p>
             </article>
             <article class="card">
-              <h3>Unclear Retirement Direction</h3>
-              <p>Many professionals want security in the future but do not have a concrete plan.</p>
+              <h3 data-i18n="problems.card2Title">Aposentadoria sem Direção</h3>
+              <p data-i18n="problems.card2Text">Muitos profissionais querem segurança no futuro, mas ainda sem um plano concreto.</p>
             </article>
             <article class="card">
-              <h3>Information Overload</h3>
-              <p>Too much market noise makes it difficult to prioritize what actually matters.</p>
+              <h3 data-i18n="problems.card3Title">Excesso de Informação</h3>
+              <p data-i18n="problems.card3Text">Muito ruído de mercado dificulta priorizar o que realmente importa.</p>
             </article>
           </div>
         </div>
@@ -135,27 +137,26 @@
 
       <section class="section">
         <div class="container">
-          <h2>Methodology</h2>
+          <h2 data-i18n="method.title">Metodologia</h2>
           <div class="timeline" role="list" aria-label="Four-step advisory process">
-            <article class="step" role="listitem"><h3>1. Diagnosis</h3><p>Understand your current financial structure, goals, and risk profile.</p></article>
-            <article class="step" role="listitem"><h3>2. Strategy</h3><p>Define a realistic and personalized investment roadmap.</p></article>
-            <article class="step" role="listitem"><h3>3. Implementation</h3><p>Organize the portfolio and execute decisions with discipline and clarity.</p></article>
-            <article class="step" role="listitem"><h3>4. Monitoring</h3><p>Review progress and adjust strategy as your life and goals evolve.</p></article>
+            <article class="step" role="listitem"><h3 data-i18n="method.step1Title">1. Diagnóstico</h3><p data-i18n="method.step1Text">Entendimento da sua estrutura financeira atual, objetivos e perfil de risco.</p></article>
+            <article class="step" role="listitem"><h3 data-i18n="method.step2Title">2. Estratégia</h3><p data-i18n="method.step2Text">Definição de um plano de investimentos realista e personalizado.</p></article>
+            <article class="step" role="listitem"><h3 data-i18n="method.step3Title">3. Implementação</h3><p data-i18n="method.step3Text">Organização da carteira e execução com disciplina e clareza.</p></article>
+            <article class="step" role="listitem"><h3 data-i18n="method.step4Title">4. Monitoramento</h3><p data-i18n="method.step4Text">Acompanhamento contínuo e ajustes conforme sua vida e metas evoluem.</p></article>
           </div>
         </div>
       </section>
 
       <section class="section muted">
         <div class="container">
-          <h2>Who This Is For</h2>
-          <p class="section-intro">
-            Professionals earning between <strong>$1,500 and $5,000 monthly</strong> who want
-            structured investment decisions, retirement planning, and sustainable wealth growth.
+          <h2 data-i18n="audience.title">Para Quem é Esta Assessoria</h2>
+          <p class="section-intro" data-i18n="audience.intro">
+            Profissionais com renda entre <strong>$1.500 e $5.000 mensais</strong> que buscam decisões de investimento estruturadas, planejamento de aposentadoria e construção de patrimônio sustentável.
           </p>
           <ul class="pill-list">
-            <li>Career professionals in growth phase</li>
-            <li>Families planning medium and long-term financial stability</li>
-            <li>Investors seeking professional guidance with transparency</li>
+            <li data-i18n="audience.item1">Profissionais em fase de crescimento na carreira</li>
+            <li data-i18n="audience.item2">Famílias com planejamento de médio e longo prazo</li>
+            <li data-i18n="audience.item3">Investidores que valorizam orientação profissional com transparência</li>
           </ul>
         </div>
       </section>
@@ -163,35 +164,34 @@
       <section id="diagnosis" class="section">
         <div class="container split">
           <div>
-            <h2>Financial Diagnosis Tool</h2>
-            <p>
-              Complete this short form and receive contact to schedule your diagnostic meeting.
+            <h2 data-i18n="form.title">Ferramenta de Diagnóstico Financeiro</h2>
+            <p data-i18n="form.description">
+              Preencha este formulário rápido e entraremos em contato para agendar sua reunião de diagnóstico.
             </p>
-            <p class="microcopy">
-              This initial diagnostic conversation is educational and focused on understanding your
-              scenario. No investment return promises are made.
+            <p class="microcopy" data-i18n="form.microcopy">
+              A conversa inicial é educativa e focada em entender seu cenário. Não há promessa de rentabilidade.
             </p>
           </div>
 
           <form class="lead-form card" id="leadForm" novalidate>
-            <label for="name">Full name</label>
+            <label for="name" data-i18n="form.nameLabel">Nome completo</label>
             <input id="name" name="name" type="text" autocomplete="name" required />
 
-            <label for="email">Email</label>
+            <label for="email" data-i18n="form.emailLabel">Email</label>
             <input id="email" name="email" type="email" autocomplete="email" required />
 
-            <label for="income">Monthly income range</label>
+            <label for="income" data-i18n="form.incomeLabel">Faixa de renda mensal</label>
             <select id="income" name="income" required>
-              <option value="">Select one option</option>
-              <option value="1500-2500">$1,500 - $2,500</option>
-              <option value="2500-3500">$2,500 - $3,500</option>
-              <option value="3500-5000">$3,500 - $5,000</option>
+              <option value="" data-i18n="form.incomePlaceholder">Selecione uma opção</option>
+              <option value="1500-2500" data-i18n="form.income1">$1.500 - $2.500</option>
+              <option value="2500-3500" data-i18n="form.income2">$2.500 - $3.500</option>
+              <option value="3500-5000" data-i18n="form.income3">$3.500 - $5.000</option>
             </select>
 
-            <label for="goal">Main objective</label>
-            <textarea id="goal" name="goal" rows="4" placeholder="Example: organize investments and start retirement planning" required></textarea>
+            <label for="goal" data-i18n="form.goalLabel">Objetivo principal</label>
+            <textarea id="goal" name="goal" rows="4" data-i18n-placeholder="form.goalPlaceholder" placeholder="Ex: organizar investimentos e iniciar planejamento de aposentadoria" required></textarea>
 
-            <button class="btn btn-primary" type="submit">Schedule Financial Diagnosis</button>
+            <button class="btn btn-primary" type="submit" data-i18n="form.submit">Agendar Diagnóstico Financeiro</button>
             <p id="formStatus" class="form-status" aria-live="polite"></p>
           </form>
         </div>
@@ -199,34 +199,34 @@
 
       <section class="section muted">
         <div class="container">
-          <h2>Trust & Transparency</h2>
+          <h2 data-i18n="trust.title">Confiança e Transparência</h2>
           <div class="grid-3">
-            <article class="card"><h3>Professional Conduct</h3><p>Advisory interactions are grounded in ethics, clarity, and respect for your goals.</p></article>
-            <article class="card"><h3>Transparent Guidance</h3><p>Recommendations are explained in plain language so you can make informed decisions.</p></article>
-            <article class="card"><h3>Compliance Mindset</h3><p>Process-oriented support with documentation and a long-term advisory perspective.</p></article>
+            <article class="card"><h3 data-i18n="trust.card1Title">Conduta Profissional</h3><p data-i18n="trust.card1Text">Atendimento pautado em ética, clareza e respeito aos seus objetivos.</p></article>
+            <article class="card"><h3 data-i18n="trust.card2Title">Orientação Transparente</h3><p data-i18n="trust.card2Text">Recomendações explicadas de forma simples para decisões conscientes.</p></article>
+            <article class="card"><h3 data-i18n="trust.card3Title">Visão de Compliance</h3><p data-i18n="trust.card3Text">Suporte orientado por processo, documentação e perspectiva de longo prazo.</p></article>
           </div>
         </div>
       </section>
 
       <section class="section">
         <div class="container">
-          <h2>Frequently Asked Questions</h2>
+          <h2 data-i18n="faq.title">Perguntas Frequentes</h2>
           <div class="faq">
             <details>
-              <summary>Is this service only for experienced investors?</summary>
-              <p>No. The process is designed for professionals who want structure, even if they are just getting started.</p>
+              <summary data-i18n="faq.q1">Este serviço é apenas para investidores experientes?</summary>
+              <p data-i18n="faq.a1">Não. O processo foi desenhado para profissionais que desejam estrutura, inclusive iniciantes.</p>
             </details>
             <details>
-              <summary>How long does the diagnostic meeting take?</summary>
-              <p>Usually 30 to 45 minutes, focused on your current situation and planning priorities.</p>
+              <summary data-i18n="faq.q2">Quanto tempo dura a reunião de diagnóstico?</summary>
+              <p data-i18n="faq.a2">Em geral, 30 a 45 minutos, focados no seu momento atual e prioridades.</p>
             </details>
             <details>
-              <summary>Will I receive guaranteed return projections?</summary>
-              <p>No. Advisory is educational and strategic, with no guarantee or promise of investment returns.</p>
+              <summary data-i18n="faq.q3">Receberei projeções com retorno garantido?</summary>
+              <p data-i18n="faq.a3">Não. A assessoria é educativa e estratégica, sem garantia ou promessa de retorno.</p>
             </details>
             <details>
-              <summary>How do we communicate after the diagnosis?</summary>
-              <p>Communication channels are defined during onboarding, with regular follow-up as needed.</p>
+              <summary data-i18n="faq.q4">Como acontece a comunicação após o diagnóstico?</summary>
+              <p data-i18n="faq.a4">Os canais são definidos no onboarding, com acompanhamento periódico conforme necessidade.</p>
             </details>
           </div>
         </div>
@@ -234,16 +234,16 @@
 
       <section class="section final-cta">
         <div class="container">
-          <h2>Build financial clarity with a structured plan</h2>
-          <p>Start with a professional diagnosis and take your next investment decisions with confidence.</p>
-          <a class="btn btn-primary" href="#diagnosis">Schedule Diagnostic Meeting</a>
+          <h2 data-i18n="final.title">Construa clareza financeira com um plano estruturado</h2>
+          <p data-i18n="final.text">Comece com um diagnóstico profissional e tome as próximas decisões com confiança.</p>
+          <a class="btn btn-primary" href="#diagnosis" data-i18n="final.cta">Agendar Reunião de Diagnóstico</a>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="container">
-        <p>© <span id="year"></span> Caio César Ponte. All rights reserved.</p>
+        <p><span data-i18n="footer.rights">Todos os direitos reservados.</span> © <span id="year"></span> Caio César Ponte.</p>
       </div>
     </footer>
 
