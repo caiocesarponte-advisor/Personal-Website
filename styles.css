@@ -48,6 +48,8 @@ a {
 
 .section {
   padding: 3.75rem 0;
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 700px;
 }
 
 .muted {
@@ -87,6 +89,12 @@ a {
 .nav-cta {
   text-decoration: none;
   color: var(--accent);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.nav-blog {
+  text-decoration: none;
   font-weight: 600;
   font-size: 0.95rem;
 }
@@ -349,5 +357,37 @@ summary {
 
   .timeline {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .nav {
+    align-items: flex-start;
+  }
+
+  .header-actions {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 0.6rem;
+  }
+
+  .hero {
+    padding-top: 4.3rem;
+  }
+
+  .section {
+    padding: 3rem 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  [data-animate] {
+    transition: none;
+    opacity: 1;
+    transform: none;
   }
 }
