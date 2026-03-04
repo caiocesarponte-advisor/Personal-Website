@@ -80,22 +80,35 @@
 
     <main id="home">
       <section class="hero section">
-        <div class="container">
-          <p class="eyebrow" data-i18n="hero.eyebrow">Assessoria Profissional de Investimentos</p>
-          <h1 data-i18n="hero.title">Organize suas decisões financeiras com estratégia</h1>
-          <p class="hero-copy" data-i18n="hero.subtitle">
-            Assessoria de investimentos com foco em clareza financeira, planejamento de longo prazo e suporte personalizado.
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#diagnosis" data-i18n="hero.primaryCta">Agendar Diagnóstico Financeiro</a>
-            <a class="btn btn-secondary" href="#about" data-i18n="hero.secondaryCta">Conheça seu Assessor</a>
+        <div class="container hero-layout">
+          <div data-animate>
+            <p class="eyebrow" data-i18n="hero.eyebrow">Assessoria Profissional de Investimentos</p>
+            <h1 data-i18n="hero.title">Organize suas decisões financeiras com estratégia</h1>
+            <p class="hero-copy" data-i18n="hero.subtitle">
+              Assessoria de investimentos com foco em clareza financeira, planejamento de longo prazo e suporte personalizado.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#diagnosis" data-i18n="hero.primaryCta">Agendar Diagnóstico Financeiro</a>
+              <a class="btn btn-secondary" href="#about" data-i18n="hero.secondaryCta">Conheça seu Assessor</a>
+            </div>
           </div>
+          <figure class="illustration" data-animate>
+            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=960&q=80" alt="Pessoa analisando um plano financeiro em tablet e papel" loading="lazy" />
+          </figure>
+        </div>
+      </section>
+
+      <section class="section muted" data-animate>
+        <div class="container image-strip">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=640&q=80" alt="Reunião de planejamento financeiro com gráficos" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=640&q=80" alt="Dashboard de investimentos em notebook" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?auto=format&fit=crop&w=640&q=80" alt="Pessoa organizando orçamento e metas financeiras" loading="lazy" />
         </div>
       </section>
 
       <section id="about" class="section">
         <div class="container split">
-          <div>
+          <div data-animate>
             <h2 data-i18n="about.title">Sobre o Assessor</h2>
             <p data-i18n="about.description">
               Caio César Ponte oferece assessoria personalizada com visão disciplinada e foco no longo prazo. Sua abordagem combina comunicação clara, organização estratégica de carteira e planejamento prático para apoiar decisões financeiras com confiança.
@@ -106,7 +119,7 @@
               <li data-i18n="about.item3">Orientação aderente à sua realidade e objetivos</li>
             </ul>
           </div>
-          <aside class="card" aria-label="Advisor contact details">
+          <aside class="card" aria-label="Advisor contact details" data-animate>
             <h3 data-i18n="contact.title">Contato</h3>
             <p><strong data-i18n="contact.nameLabel">Nome:</strong> Caio César Ponte</p>
             <p><strong data-i18n="contact.emailLabel">Email:</strong> <a href="mailto:caiocesar.investing@gmail.com">caiocesar.investing@gmail.com</a></p>
@@ -118,7 +131,7 @@
       <section class="section muted">
         <div class="container">
           <h2 data-i18n="problems.title">Desafios Comuns do Investidor</h2>
-          <div class="grid-3">
+          <div class="grid-3" data-animate>
             <article class="card">
               <h3 data-i18n="problems.card1Title">Falta de Estrutura Financeira</h3>
               <p data-i18n="problems.card1Text">A renda cresce, mas as decisões de investimento continuam fragmentadas e sem consistência.</p>
@@ -138,7 +151,7 @@
       <section class="section">
         <div class="container">
           <h2 data-i18n="method.title">Metodologia</h2>
-          <div class="timeline" role="list" aria-label="Four-step advisory process">
+          <div class="timeline" role="list" aria-label="Four-step advisory process" data-animate>
             <article class="step" role="listitem"><h3 data-i18n="method.step1Title">1. Diagnóstico</h3><p data-i18n="method.step1Text">Entendimento da sua estrutura financeira atual, objetivos e perfil de risco.</p></article>
             <article class="step" role="listitem"><h3 data-i18n="method.step2Title">2. Estratégia</h3><p data-i18n="method.step2Text">Definição de um plano de investimentos realista e personalizado.</p></article>
             <article class="step" role="listitem"><h3 data-i18n="method.step3Title">3. Implementação</h3><p data-i18n="method.step3Text">Organização da carteira e execução com disciplina e clareza.</p></article>
@@ -173,7 +186,7 @@
             </p>
           </div>
 
-          <form class="lead-form card" id="leadForm" novalidate>
+          <form class="lead-form card" id="leadForm" data-email-recipient="caiocesar.investing@gmail.com" novalidate>
             <label for="name" data-i18n="form.nameLabel">Nome completo</label>
             <input id="name" name="name" type="text" autocomplete="name" required />
 
@@ -191,8 +204,11 @@
             <label for="goal" data-i18n="form.goalLabel">Objetivo principal</label>
             <textarea id="goal" name="goal" rows="4" data-i18n-placeholder="form.goalPlaceholder" placeholder="Ex: organizar investimentos e iniciar planejamento de aposentadoria" required></textarea>
 
+            <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="sr-only" aria-hidden="true" />
+
             <button class="btn btn-primary" type="submit" data-i18n="form.submit">Agendar Diagnóstico Financeiro</button>
             <p id="formStatus" class="form-status" aria-live="polite"></p>
+            <p class="microcopy" data-i18n="form.emailDelivery">Ao enviar, sua proposta é encaminhada diretamente para o e-mail do assessor.</p>
           </form>
         </div>
       </section>
