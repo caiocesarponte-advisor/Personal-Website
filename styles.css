@@ -391,3 +391,59 @@ summary {
     transform: none;
   }
 }
+
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 0;
+  background: var(--accent);
+  z-index: 30;
+  transition: width 0.12s linear;
+}
+
+.article-hero {
+  padding-top: 5rem;
+}
+
+.article-shell {
+  display: grid;
+  gap: 1rem;
+}
+
+.article-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  color: #46617a;
+  font-size: 0.95rem;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 0.8rem;
+}
+
+.stat-card {
+  background: #f7fafc;
+  border: 1px solid #d8e4ef;
+  border-radius: 10px;
+  padding: 0.8rem;
+}
+
+.cta-inline {
+  background: var(--primary);
+  color: #f0f5fa;
+}
+
+.cta-inline h2,
+.cta-inline p,
+.cta-inline a {
+  color: #f0f5fa;
+}
+
+.author-box {
+  border-left: 4px solid var(--accent);
+}
