@@ -7,7 +7,7 @@ const i18n = {
   pt: {
     pageTitle: 'Caio César Ponte | Assessoria Estratégica de Investimentos',
     pageDescription:
-      'Assessoria de investimentos para profissionais que buscam clareza financeira, planejamento de longo prazo e suporte personalizado. Agende seu diagnóstico financeiro.',
+      'Assessoria para profissionais que buscam clareza financeira, planejamento de longo prazo e suporte personalizado.',
     'nav.cta': 'Agendar Diagnóstico',
     'nav.blog': 'Blog',
     'hero.eyebrow': 'Assessoria Profissional de Investimentos',
@@ -116,7 +116,7 @@ const i18n = {
   en: {
     pageTitle: 'Caio César Ponte | Strategic Investment Advisory',
     pageDescription:
-      'Strategic investment advisory for professionals seeking financial clarity, long-term planning, and personalized support. Schedule your financial diagnosis meeting.',
+      'Strategic investment advisory for professionals seeking financial clarity, long-term planning, and personalized support.',
     'nav.cta': 'Schedule Diagnosis',
     'nav.blog': 'Blog',
     'hero.eyebrow': 'Professional Investment Advisory',
