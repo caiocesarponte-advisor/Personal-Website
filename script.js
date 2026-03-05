@@ -2,6 +2,7 @@ const form = document.getElementById('leadForm');
 const status = document.getElementById('formStatus');
 const year = document.getElementById('year');
 const langButtons = document.querySelectorAll('.lang-btn');
+const shareButtons = document.querySelectorAll('[data-share-platform]');
 
 const i18n = {
   pt: {
@@ -81,6 +82,30 @@ const i18n = {
     'blog.card3Title': 'Planejamento de aposentadoria',
     'blog.card3Text': 'Estratégias de longo prazo para preservar poder de compra e patrimônio.',
     'blog.cardRead': 'Ler artigo',
+    'guide.title': 'Guia prático para organizar suas decisões financeiras com estratégia',
+    'guide.p1':
+      'Organizar suas decisões financeiras com estratégia é o ponto de partida para transformar renda em patrimônio. Sem um processo claro, é comum escolher produtos por impulso, repetir alocações parecidas e perder oportunidades de equilibrar risco e retorno. Nesta página, você encontra uma visão prática para estruturar objetivos, acompanhar indicadores importantes e avançar com consistência ao longo dos próximos anos.',
+    'guide.p2':
+      'O primeiro passo é definir prioridades financeiras por horizonte de tempo. Metas de curto prazo pedem liquidez e previsibilidade; metas de médio prazo exigem equilíbrio; metas de longo prazo permitem mais diversificação e exposição a crescimento. Ao separar esses blocos, você reduz ansiedade na tomada de decisão e melhora a disciplina quando o mercado oscila.',
+    'guide.p3':
+      'Se você está começando, vale visitar o conteúdo introdutório sobre <a href="artigos/como-comecar-a-investir/">como começar a investir com método</a> e também o guia de <a href="artigos/perfil-de-investidor/">perfil de investidor</a>. Esses materiais ajudam a traduzir conceitos técnicos em decisões aplicáveis à sua realidade de renda, objetivos e tolerância a risco.',
+    'guide.p4':
+      'Para fortalecer a base da carteira, a construção de uma <a href="artigos/reserva-de-emergencia/">reserva de emergência</a> continua sendo prioridade. Depois dessa etapa, você pode evoluir para uma estratégia de <a href="artigos/diversificacao-de-investimentos/">diversificação de investimentos</a>, combinando classes de ativos com funções diferentes no portfólio.',
+    'guide.p5':
+      'Em ciclos de inflação mais alta, é essencial revisar objetivos reais de retorno e proteção do poder de compra. O artigo sobre <a href="artigos/inflacao-investimentos/">inflação e investimentos</a> mostra como adaptar sua leitura de cenário sem abandonar o planejamento de longo prazo. Para quem está em dúvida entre classes de ativos, o conteúdo sobre <a href="artigos/renda-fixa-ou-renda-variavel/">renda fixa ou renda variável</a> oferece um roteiro de comparação simples.',
+    'guide.p6':
+      'Outro ponto relevante é evitar erros recorrentes de comportamento. Concentrar demais em poucos ativos, trocar de estratégia com frequência e seguir recomendações sem contexto são atitudes que comprometem resultados. O guia sobre <a href="artigos/erros-ao-investir/">erros ao investir</a> e o material sobre <a href="artigos/comportamento-financeiro/">comportamento financeiro</a> ajudam a criar regras pessoais de decisão, reduzindo vieses e impulsividade.',
+    'guide.p7':
+      'Se o objetivo é montar um plano completo, avance para o conteúdo de <a href="artigos/planejamento-financeiro/">planejamento financeiro</a> e para o panorama de <a href="artigos/juros-compostos/">juros compostos</a>. Juntos, eles mostram como pequenas decisões recorrentes podem gerar impacto expressivo no longo prazo.',
+    'guide.p8':
+      'Você também pode explorar todos os materiais na página de <a href="artigos/index.html">artigos de educação financeira</a> e no <a href="blog/index.html">blog completo</a>. Quanto maior seu repertório de leitura, melhor sua capacidade de filtrar ruído e sustentar decisões de investimento com clareza, objetivo e consistência.',
+    'share.title': 'Compartilhe este conteúdo',
+    'share.description':
+      'Se este material foi útil, compartilhe com outras pessoas que também querem melhorar a organização financeira.',
+    'share.linkedin': 'Compartilhar no LinkedIn',
+    'share.whatsapp': 'Compartilhar no WhatsApp',
+    'share.x': 'Compartilhar no X',
+    'share.facebook': 'Compartilhar no Facebook',
     'trust.title': 'Confiança e Transparência',
     'trust.card1Title': 'Conduta Profissional',
     'trust.card1Text': 'Atendimento pautado em ética, clareza e respeito aos seus objetivos.',
@@ -189,6 +214,30 @@ const i18n = {
     'blog.card3Title': 'Retirement planning',
     'blog.card3Text': 'Long-term strategies to preserve purchasing power and wealth.',
     'blog.cardRead': 'Read article',
+    'guide.title': 'Practical guide to organizing your financial decisions with strategy',
+    'guide.p1':
+      'Organizing your financial decisions with strategy is the starting point for turning income into wealth. Without a clear process, it is common to choose products impulsively, repeat similar allocations, and miss opportunities to balance risk and return. On this page, you will find a practical framework to structure goals, monitor key indicators, and move forward consistently over the coming years.',
+    'guide.p2':
+      'The first step is to define financial priorities by time horizon. Short-term goals require liquidity and predictability; medium-term goals require balance; long-term goals allow for greater diversification and exposure to growth. By separating these blocks, you reduce decision anxiety and improve discipline when markets fluctuate.',
+    'guide.p3':
+      'If you are getting started, it is worth visiting the introductory content on <a href="artigos/como-comecar-a-investir/">how to start investing with a method</a> and also the <a href="artigos/perfil-de-investidor/">investor profile guide</a>. These materials help translate technical concepts into practical decisions aligned with your income, goals, and risk tolerance.',
+    'guide.p4':
+      'To strengthen your portfolio foundation, building an <a href="artigos/reserva-de-emergencia/">emergency fund</a> remains a priority. After this stage, you can evolve to an <a href="artigos/diversificacao-de-investimentos/">investment diversification</a> strategy, combining asset classes with different functions in the portfolio.',
+    'guide.p5':
+      'In periods of higher inflation, it is essential to review real return objectives and purchasing power protection. The article on <a href="artigos/inflacao-investimentos/">inflation and investments</a> shows how to adapt your scenario analysis without abandoning long-term planning. If you are unsure between asset classes, the content on <a href="artigos/renda-fixa-ou-renda-variavel/">fixed income or equities</a> offers a simple comparison roadmap.',
+    'guide.p6':
+      'Another relevant point is avoiding recurring behavioral mistakes. Over-concentrating in a few assets, switching strategy too often, and following recommendations without context are attitudes that hurt outcomes. The guide on <a href="artigos/erros-ao-investir/">investment mistakes</a> and the material on <a href="artigos/comportamento-financeiro/">financial behavior</a> help you create personal decision rules, reducing biases and impulsiveness.',
+    'guide.p7':
+      'If your goal is to build a complete plan, move to the content on <a href="artigos/planejamento-financeiro/">financial planning</a> and the overview of <a href="artigos/juros-compostos/">compound interest</a>. Together, they show how small recurring decisions can generate significant long-term impact.',
+    'guide.p8':
+      'You can also explore all materials on the <a href="artigos/index.html">financial education articles</a> page and in the <a href="blog/index.html">full blog</a>. The broader your reading repertoire, the better your ability to filter noise and sustain investment decisions with clarity, objectivity, and consistency.',
+    'share.title': 'Share this content',
+    'share.description':
+      'If this material was helpful, share it with other people who also want to improve their financial organization.',
+    'share.linkedin': 'Share on LinkedIn',
+    'share.whatsapp': 'Share on WhatsApp',
+    'share.x': 'Share on X',
+    'share.facebook': 'Share on Facebook',
     'trust.title': 'Trust & Transparency',
     'trust.card1Title': 'Professional Conduct',
     'trust.card1Text':
@@ -259,7 +308,47 @@ function applyLanguage(lang) {
     button.setAttribute('aria-pressed', String(isActive));
   });
 
+  updateShareLinks(lang);
   status.textContent = '';
+}
+
+
+const shareConfig = {
+  pt: {
+    url: 'https://caiocesarponte-advisor.github.io/Personal-Website/',
+    title: 'Guia prático para organizar suas decisões financeiras com estratégia',
+    description:
+      'Conteúdo prático para transformar renda em patrimônio com decisões financeiras mais claras e consistentes.',
+  },
+  en: {
+    url: 'https://caiocesarponte-advisor.github.io/Personal-Website/',
+    title: 'Practical guide to organizing your financial decisions with strategy',
+    description:
+      'Practical content to turn income into wealth with clearer and more consistent financial decisions.',
+  },
+};
+
+function updateShareLinks(lang) {
+  const config = shareConfig[lang] || shareConfig.pt;
+  const encodedUrl = encodeURIComponent(config.url);
+  const encodedTitle = encodeURIComponent(config.title);
+  const encodedDescription = encodeURIComponent(config.description);
+  const whatsappText = encodeURIComponent(`${config.title} - ${config.description} ${config.url}`);
+  const xText = encodeURIComponent(`${config.title} | ${config.description}`);
+
+  const shareUrls = {
+    linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}&title=${encodedTitle}&summary=${encodedDescription}`,
+    whatsapp: `https://wa.me/?text=${whatsappText}`,
+    x: `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${xText}`,
+    facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}&quote=${encodeURIComponent(`${config.title} - ${config.description}`)}`,
+  };
+
+  shareButtons.forEach((button) => {
+    const platform = button.dataset.sharePlatform;
+    if (shareUrls[platform]) {
+      button.href = shareUrls[platform];
+    }
+  });
 }
 
 function setupAnimations() {
